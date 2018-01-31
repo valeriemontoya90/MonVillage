@@ -13,7 +13,7 @@ import villages.model.Ville;
 public class VilleDaoJpa implements VilleDao {
 
 	@Override
-	public Ville find(Integer id) {
+	public Ville find(Long id) {
 		Ville ville = null;
 		EntityManager em = null;
 		EntityTransaction tx = null;

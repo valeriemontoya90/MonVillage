@@ -1,32 +1,59 @@
 package villages.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Ville")
 public class Ville {
-	private Integer id;
-	private String code;
-	private String libelle;
+	@Id
+	@GeneratedValue
+	private Long id;
+	private String nom;
+	private String pays;
 	
-	public Ville(Integer id, String code, String libelle) {
-		super();
-		this.code = code;
-		this.libelle = libelle;
+	public Ville() {
 	}
 	
-	public Integer getId() {
+	public Ville(Long id, String nom, String pays) {
+		super();
+		this.id = id;
+		this.nom = nom;
+		this.pays = pays;
+	}
+	public Ville(String nom, String pays) {
+		this.nom = nom;
+		this.pays = pays;
+	}
+	
+	public Long getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+
+	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getCode() {
-		return code;
+
+	public String getNom() {
+		return nom;
 	}
-	public void setCode(String code) {
-		this.code = code;
+
+	public void setNom(String nom) {
+		this.nom = nom;
 	}
-	public String getLibelle() {
-		return libelle;
+
+	public String getPays() {
+		return pays;
 	}
-	public void setLibelle(String libelle) {
-		this.libelle = libelle;
+
+	public void setPays(String pays) {
+		this.pays = pays;
+	}
+	
+	@Override
+	public String toString() {
+		return "Ville [id=" + id + ", nom=" + nom + ", pays=" + pays + "]";
 	}
 }
