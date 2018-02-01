@@ -15,6 +15,7 @@ public class Ville {
 	private String pays;
 	
 	public Ville() {
+		super();
 	}
 	
 	public Ville(Long id, String nom, String pays) {
