@@ -1,11 +1,31 @@
 package villages.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Pays {
 
-	public int id;
-	public String code;
-	public String libelle;
-
+	@Id
+	@GeneratedValue
+	private int id;
+	@Column(length = 30)
+	private String code;
+	@Column(length = 30)
+	private String libelle;
+	
+	
+	public Pays() {
+		super();
+	}
+	
+	public Pays(String code, String libelle) {
+		this.code = code;
+		this.libelle = libelle;
+	}
+	
 	public Pays(int id, String code, String libelle) {
 		super();
 		this.id = id;
